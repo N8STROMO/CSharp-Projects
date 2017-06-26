@@ -19,7 +19,7 @@ namespace CaesarCipher
 
             int typeOfCipher = 0;
 
-            // Deals with user potentially entered an unreigested type of cipher
+           // Deals with user potentially entering a wrong answer to the prompt
             while (typeOfCipher != 1 || typeOfCipher != 2)
             {
 
@@ -81,7 +81,7 @@ namespace CaesarCipher
                     while (isKeyProvided != 1 || isKeyProvided != 2)
                     {
                         // Ask the user if the key is provided or not
-                        Console.WriteLine("Is the Key Provided? Press 1 for YES and 2 for NO");
+                        Console.WriteLine("Is the Key provided? Press 1 for YES and 2 for NO");
                         // What if the user enters a letter or other character?
                         try
                         {
@@ -110,9 +110,9 @@ namespace CaesarCipher
                                 // Shift each individual character to the unshifted index and add it to decrypted
                                 {
                                     int curIndex = Array.IndexOf(alphabet, letter);
-                                    int unShiftedIndex = (curIndex - key) % 26;
+                                    int unshiftedIndex = (curIndex - key) % 26;
 
-                                    char decryptedChar = alphabet[unShiftedIndex];
+                                    char decryptedChar = alphabet[unshiftedIndex];
                                     decrypted += decryptedChar;
                                 }
                             }
@@ -128,8 +128,8 @@ namespace CaesarCipher
                         {
                             // Check every potential decryption
                             for (int i = 26; i >= 0; i--)
-                            {
-                                decrypted = "";
+                            { 
+                                decrypted = " ";
                                 foreach (char letter in userInput)
 
                                 {
