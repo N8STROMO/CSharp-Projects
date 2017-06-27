@@ -99,7 +99,7 @@ namespace CaesarCipher
                             int key = Convert.ToInt32(Console.ReadLine());
 
 
-                            foreach (char letter in userInput)
+                            foreach (char letter in userInputLower)
                             {
                                 // Case to deal with spaces being entered
                                 if (letter == ' ')
@@ -110,7 +110,7 @@ namespace CaesarCipher
                                 // Shift each individual character to the unshifted index and add it to decrypted
                                 {
                                     int curIndex = Array.IndexOf(alphabet, letter);
-                                    int unshiftedIndex = (curIndex - key) % 26;
+                                    int unshiftedIndex = ((curIndex + key) % 26);
 
                                     char decryptedChar = alphabet[unshiftedIndex];
                                     decrypted += decryptedChar;
@@ -142,7 +142,7 @@ namespace CaesarCipher
                                     {
                                         // Shift each individual character to the unshifted index and add it to potential decrypted
                                         int curIndex = Array.IndexOf(alphabet, letter);
-                                        int unShiftedIndex = (curIndex - i) % 26;
+                                        int unShiftedIndex = (curIndex + i) % 26;
                                         char decryptedChar = alphabet[unShiftedIndex];
                                         decrypted += decryptedChar;
                                     }
